@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import Login from './signinBtn';
 
 const Navbar = () => {
   return (
@@ -9,9 +11,10 @@ const Navbar = () => {
           <span className='underline font-bold inline-block ml-1'> books </span>
         </div>
         <div>
-          <Button variant='ghost' size='sm' className='text-gray-500'>
+          {/* <Button variant='ghost' size='sm' className='text-gray-500'>
             Sign in
-          </Button>
+          </Button> */}
+          <Login size='sm' variant='ghost' text='Sign in' />
         </div>
       </div>
     </div>

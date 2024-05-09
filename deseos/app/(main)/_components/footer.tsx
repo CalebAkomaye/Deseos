@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import React from 'react';
+import Login from './signinBtn';
 
 const Footer = () => {
   return (
@@ -10,12 +11,8 @@ const Footer = () => {
           <span className='underline font-bold inline-block ml-1'> books </span>
         </div>
         <div className='inline-flex gap-x-3'>
-          <Button variant='ghost' size='sm' className='text-gray-500'>
-            Sign in
-          </Button>
-          <Button variant='ghost' size='sm' className='text-gray-500'>
-            About
-          </Button>
+          <Login size='sm' variant='ghost' text='Sign in' />
+          <Login size='sm' variant='ghost' text='About' />
         </div>
       </div>
     </div>
