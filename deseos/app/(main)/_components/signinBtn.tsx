@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '@/utils/firebase';
+import { useRouter } from 'next/navigation';
 
 const Login = ({
   variant,
@@ -13,10 +14,12 @@ const Login = ({
   size: 'sm' | 'lg' | 'default';
   text: string;
 }) => {
+  const router = useRouter();
   const authProvider = new GoogleAuthProvider();
   const authLogin = async () => {
     try {
       const result = await signInWithPopup(auth, authProvider);
+      router.push('/documents');
     } catch (error) {
       console.log('Athentication Error: ', error);
     }

@@ -5,13 +5,17 @@ import { Undo } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FaGoogle } from 'react-icons/fa';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
 import { auth } from '@/utils/firebase';
 
 const Hero = () => {
+  const router = useRouter();
   const googleProvider = new GoogleAuthProvider();
   const googleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
+      router.push('/documents');
+      console.log(result);
     } catch (error) {}
   };
   return (
